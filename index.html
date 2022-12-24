@@ -3,7 +3,7 @@
     <script>
       function openWebsite(url) {
         // Open the website in Safari from within Instagram on iOS
-        window.open(url, "_system");
+        window.open("app-specific://" + url);
       }
     </script>
   </head>
@@ -11,7 +11,7 @@
     <!-- Create a form to enter the URL of the website to open -->
     <form onsubmit="openWebsite(this.url.value); return false;">
       <input type="text" name="url" placeholder="Enter URL" />
-      <input type="submit" value="Open website in Safari" />
+      <input type="submit" value="test 300" />
     </form>
   </body>
 </html>
