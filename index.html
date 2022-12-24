@@ -2,14 +2,8 @@
   <head>
     <script>
       function openWebsite(url) {
-        // Check if the device is an Android device
-        if (/Android/i.test(navigator.userAgent)) {
-          // Open the website in the default browser on Android
-          window.location = "intent://" + url + "#Intent;package=com.android.chrome;end";
-        } else {
-          // Open the website in Safari on iOS
-          window.open("app-specific://" + url);
-        }
+        // Open the website in Safari from within Instagram on iOS
+        window.open(url, "_system");
       }
     </script>
   </head>
@@ -17,7 +11,7 @@
     <!-- Create a form to enter the URL of the website to open -->
     <form onsubmit="openWebsite(this.url.value); return false;">
       <input type="text" name="url" placeholder="Enter URL" />
-      <input type="submit" value="Open website" />
+      <input type="submit" value="Open website in Safari" />
     </form>
   </body>
 </html>
