@@ -5,10 +5,10 @@
         // Check if the device is an Android device
         if (/Android/i.test(navigator.userAgent)) {
           // Open the website in the default browser on Android
-          window.location = "intent://" + ourhub.me + "#Intent;package=com.android.chrome;end";
+          window.location = "intent://" + url + "#Intent;package=com.android.chrome;end";
         } else {
           // Open the website in Safari on iOS
-          window.open("app-specific://" + ourhub.me);
+          window.open("app-specific://" + url);
         }
       }
     </script>
