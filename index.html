@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Open Link in Default App</title>
+  </head>
+  <body>
+    <a href="#" id="link">Open Link</a>
+
+    <script>
+      document.getElementById('link').addEventListener('click', function(event) {
+        event.preventDefault();
+        window.open('https://ourhub.me', '_system');
+      });
+    </script>
+  </body>
+</html>
