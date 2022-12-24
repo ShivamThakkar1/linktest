@@ -1,16 +1,23 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Open Link in Default App</title>
+    <script>
+      function openWebsite(url) {
+        // Check if the device is an Android device
+        if (/Android/i.test(navigator.userAgent)) {
+          // Open the website in the default browser on Android
+          window.location = "intent://" + url + "#Intent;package=com.android.chrome;end";
+        } else {
+          // Open the website in Safari on iOS
+          window.open("app-specific://" + url);
+        }
+      }
+    </script>
   </head>
   <body>
-    <a href="#" id="link">Open Link</a>
-
-    <script>
-      document.getElementById('link').addEventListener('click', function(event) {
-        event.preventDefault();
-        window.open('https://ourhub.me', '_system');
-      });
-    </script>
+    <!-- Create a form to enter the URL of the website to open -->
+    <form onsubmit="openWebsite(this.url.value); return false;">
+      <input type="text" name="url" placeholder="Enter URL" />
+      <input type="submit" value="Open website" />
+    </form>
   </body>
 </html>
